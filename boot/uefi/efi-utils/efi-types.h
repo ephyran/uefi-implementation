@@ -16,7 +16,7 @@
 #endif
 
 #define EFI_ERROR(x) (((intptr_t)(x)) < 0)
-#define HANDLE_ERR(x) if (EFI_ERROR((x))) return (x)
+
 
 #define EFI_SUCCESS 0u
 
@@ -25,8 +25,11 @@
 
 typedef unsigned short wchar;
 
+typedef uint64_t efi_physical_address;
+typedef uint64_t efi_virtual_address;
+
 typedef size_t  efi_status;
-typedef void    *efi_handle;
+typedef void *  efi_handle;
 
 struct efi_table_header {
     uint64_t signature;

@@ -16,19 +16,28 @@ struct simple_text_output_mode {
 };
 
 struct efi_simple_text_output_protocol {
-    efi_status                      (*reset)                (struct efi_simple_text_output_protocol *identity, bool extended_verification) EFIFUNC;
-    efi_status                      (*output_string)        (struct efi_simple_text_output_protocol *identity, wchar *string) EFIFUNC;
-    efi_status                      (*test_string)          (struct efi_simple_text_output_protocol *identity, wchar *string) EFIFUNC;
-    efi_status                      (*query_mode)           (struct efi_simple_text_output_protocol *identity,
-                                                                size_t mode_number,
-                                                                size_t columns,
-                                                                size_t rows)
-                                                            EFIFUNC;
-    efi_status                      (*set_mode)             (struct efi_simple_text_output_protocol *identity, size_t mode_number) EFIFUNC;
-    efi_status                      (*set_attribute)        (struct efi_simple_text_output_protocol *identity, size_t attribute) EFIFUNC;
-    efi_status                      (*clear_screen)         (struct efi_simple_text_output_protocol *identity) EFIFUNC;
-    efi_status                      (*set_cursor_position)  (struct efi_simple_text_output_protocol *identity, size_t column, size_t row);
-    efi_status                      (*enable_cursor)        (struct efi_simple_text_output_protocol *identity, bool visible);
+    efi_status                      (*reset)
+        (struct efi_simple_text_output_protocol *identity, bool extended_verification) EFIFUNC;
+    efi_status                      (*output_string)
+        (struct efi_simple_text_output_protocol *identity, wchar *string) EFIFUNC;
+    efi_status                      (*test_string)
+        (struct efi_simple_text_output_protocol *identity, wchar *string) EFIFUNC;
+    efi_status                      (*query_mode)
+        (struct efi_simple_text_output_protocol *identity,
+            size_t mode_number,
+            size_t columns,
+            size_t rows)
+        EFIFUNC;
+    efi_status                      (*set_mode)
+        (struct efi_simple_text_output_protocol *identity, size_t mode_number) EFIFUNC;
+    efi_status                      (*set_attribute)
+        (struct efi_simple_text_output_protocol *identity, size_t attribute) EFIFUNC;
+    efi_status                      (*clear_screen)
+        (struct efi_simple_text_output_protocol *identity) EFIFUNC;
+    efi_status                      (*set_cursor_position)
+        (struct efi_simple_text_output_protocol *identity, size_t column, size_t row);
+    efi_status                      (*enable_cursor)
+        (struct efi_simple_text_output_protocol *identity, bool visible);
     struct simple_text_output_mode  *mode;
 };
 
