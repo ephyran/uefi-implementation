@@ -1,0 +1,7 @@
+ovmf/
+iso/
+
+*.o
+*.efi
+*.img
+*.iso
