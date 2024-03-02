@@ -1,6 +1,10 @@
 #ifndef LOADER_EFI_SYSTEM_TABLE_h_
 #define LOADER_EFI_SYSTEM_TABLE_h_
 
+#define EFI_SYSTEM_TABLE_SIGNATURE          0x5453595320494249
+#define EFI_1_10_SYSTEM_TABLE_REVISION      ((1 << 16) | (10))
+#define EFI_MINIMUM_SYSTEM_TABLE_REVISION   EFI_1_10_SYSTEM_TABLE_REVISION
+
 #include "efi-boot-services.h"
 #include "efi-types.h"
 #include "protocols/simple-text-output-protocol.h"

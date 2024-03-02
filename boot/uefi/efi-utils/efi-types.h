@@ -17,8 +17,9 @@
 
 #define EFI_ERROR(x) (((intptr_t)(x)) < 0)
 
-
 #define EFI_SUCCESS 0u
+
+#define EFI_INVALID_PARAMETER EFI_ERROR(2)
 
 #include <stddef.h>
 #include <stdint.h>

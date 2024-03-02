@@ -9,6 +9,9 @@
 efi_status efi_main (efi_handle handle, struct efi_system_table *system_table) {
     efi_status status;
 
+    if (!(system_table->hdr.signature == EFI_SYSTEM_TABLE_SIGNATURE))       return EFI_INVALID_PARAMETER;
+    if (!(system_table->hdr.revision > EFI_MINIMUM_SYSTEM_TABLE_REVISION))  return EFI_INVALID_PARAMETER;
+
     clear_screen(system_table);
     print(system_table, STDOUT, u"Hello World!");
 
